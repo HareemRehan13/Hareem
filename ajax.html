@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Task</title>
+    
+</head>
+
+<body>
+    <h1>GET DATA WITH AJAX</h1>
+    <!-- <table border="1">
+        <tr>
+            
+            <th>
+                Sr.no
+            </th>
+
+          
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                City
+            </th> 
+         </tr>
+         <td id="user_id">
+        </td>
+        <td id="user_name">
+
+       </td>
+       <td id="user_email">
+
+       </td>
+       <td id="user_city">
+
+       </td>
+
+
+      
+       
+       
+    </table> -->
+   
+   
+    <p id="table_data"></p>
+  
+    <button type="button" id="ID_fetchdata">Show Data</button>
+   
+    
+  
+    <script src="bootstrap/js/jquery-3.6.3.min.js"></script>
+<script>
+    $(document).ready(function () {
+        
+   $('#ID_fetchdata').on("click",function(){
+
+    $.ajax({
+         url:"dummy.json",
+        type:"GET",
+        // dataType:"text",
+   
+success: function (data){
+ console.log(data);
+ for(var i= 0 ; i < data.length ; i++){
+document.getElementById('table_data').innerHTML += data[i].id +  data[i].name + data[i].email +  data[i].city+ '<br>';
+                
+            }
+          // document.getElementById('user_id').innerHTML += data[i].id + '<br>';
+                // document.getElementById('user_name').innerHTML += data[i].name + '<br>';
+                // document.getElementById('user_email').innerHTML += data[i].email + '<br>';
+                // document.getElementById('user_city').innerHTML += data[i].city + '<br>'; 
+                //   $('#table_data').html(data)
+         },
+           
+            
+     
+        error: function (error) {
+            console.log(error);
+            
+        }
+     
+    }) 
+})
+    })
+</script>
+   
+</body>
+
+</html>

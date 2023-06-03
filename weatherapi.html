@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="input" id="ID_Input">
+<button type="button" onclick="btngetweather()">Show</button>
+<div id="Id_temp"></div>
+<span id="Id_description" class="small"></span>
+<span id="Id_country" class="small"></span>
+
+    <script src="bootstrap/js/jquery-3.6.3.min.js"></script>
+
+    <script>
+        function btngetweather(){
+    var ID_Input = document.getElementById("ID_Input")
+    var APIKEY = "3b920372297f4a8b5cf32bda258ce7d4";
+var new_api = 'https://api.openweathermap.org/data/2.5/weather?q='+ID_Input.value+ '&appid=' + APIKEY; 
+ 
+var Id_temp =document.getElementById('Id_temp');
+var Id_description =document.getElementById('Id_description');
+var Id_country =document.getElementById('Id_country');
+debugger
+
+$.ajax({
+    url: new_api,
+    type: 'GET',
+    success: function(data){
+        var temp = data.main.temp;
+var C = temp - 273.15
+Id_temp.innerText= (Math.round(C * 10)/ 10).toFixed(1) + '°C';
+Id_description.innerText= data.weather[0].description
+Id_country.innerText= data.sys.country
+
+console.log(Math.round(C))
+        console.log(data)
+    }
+})
+}
+
+
+
+</script>
+</body>
+</html>

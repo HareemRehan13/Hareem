@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <title>Weather API</title>
+  <style>
+    body {
+      margin: 10px;
+      margin-top: 40px;
+      background-image: url(img/istockphoto-479184640-170667a.jpg);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+
+    .heading {
+      color: rgb(132, 129, 129);
+      text-align: center;
+    }
+
+    .search {
+      width: 35% !important;
+      margin-left: 30%;
+
+    }
+
+    .input {
+      padding-right: 20% !important;
+
+    }
+
+    .div1 {
+      background: transparent ;
+      border: 2px solid rgba(255, 255, 255, .5);
+      box-shadow: 0 0 20px rgba(61, 60, 60, 0.5);
+      padding: 50px;
+      border-radius: 25px;
+      margin-left: 26%;
+
+    }
+
+    .temp {
+      font-size: 50px;
+    }
+
+    .img {
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <h1 class="heading"> WEATHER API</h1>
+  <br>
+  <div class="input-group search">
+    <input type="text" class="form-control input" placeholder="Enter a City..." id="ID_Input">
+    <button class="btn btn-outline-secondary" type="button" onclick="btngetweather()">Search</button>
+  </div>
+  <br>
+  <div class="card mb-3 div1" style="max-width: 600px;">
+    <div class="row g-0 ">
+      <div class="col-md-4">
+        <img class="img" src="img/hd-cartoon-sun-with-cloud-weather-icon-png-31631359741flwt4iw3f3-removebg-preview.png"
+          class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <center>
+
+            <h3 class="city" id="ID_city"></h3>
+            <h1 class="temp" id="Id_temp"></h1>
+            <span id="Id_description"></span>
+            <span id="Id_country"></span>
+
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrap/js/jquery-3.6.3.min.js"></script>
+
+  <script>
+    function btngetweather() {
+      var ID_Input = document.getElementById("ID_Input")
+      var APIKEY = "3b920372297f4a8b5cf32bda258ce7d4";
+      var new_api = 'https://api.openweathermap.org/data/2.5/weather?q=' + ID_Input.value + '&appid=' + APIKEY;
+      var ID_city = document.getElementById('ID_city');
+      var Id_temp = document.getElementById('Id_temp');
+      var Id_description = document.getElementById('Id_description');
+      var Id_country = document.getElementById('Id_country');
+      debugger
+
+      $.ajax({
+        url: new_api,
+        type: 'GET',
+        success: function (data) {
+          var temp = data.main.temp;
+          var C = temp - 273.15
+          // Id_temp.innerText = (Math.round(C * 10) / 10).toFixed(1) + '°C';
+          Id_temp.innerText = (Math.round(C)) + '°C';
+          ID_city.innerText = data.name
+          Id_description.innerText = data.weather[0].description
+          Id_country.innerText = data.sys.country
+
+          console.log(Math.round(C))
+          console.log(data)
+        }
+      })
+    }
+
+
+
+  </script>
+</body>
+
+</html>

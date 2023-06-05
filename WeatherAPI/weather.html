@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Weather App</title>
+</head>
+<body>
+   
+       
+            <div class="card">
+                <div class="search">
+            <input type="text" class=" input" placeholder="Enter a City..." id="ID_Input" >
+            <button class=" btn" type="button" onclick="btnsearch()"><img src="weather-app-img/images/search.png" ></button>
+         <div class="weather">
+            <img src="weather-app-img/images/clear.png" id="ID_icon" class="icon">
+            <h1 class="temp" id="ID_temp" >22°C</h1>
+            <h2 class="city" id="ID_city">Karachi</h2>
+            <div class="flex">
+            <div class="col">
+                <img src="weather-app-img/images/humidity.png" class="images">
+                <div>
+                <p id="ID_humidity">48%</p>
+                <p>Humidity</p>
+            </div>
+            </div>
+            
+            <div class="col">
+                <img src="weather-app-img/images/wind.png" class="images">
+                <div>
+                
+                <p id="ID_windspeed">10.29km/h</p>
+                <p>Wind Speed</p>
+            </div>
+            </div>
+        </div>
+         </div>
+        </div>
+     </div>
+      
+    
+   
+    <script src="bootstrap/js/jquery-3.6.3.min.js"></script>
+<script>
+function btnsearch(){
+    var ID_Input = document.getElementById('ID_Input');
+    var APIKEY = "3b920372297f4a8b5cf32bda258ce7d4";
+var new_api = 'https://api.openweathermap.org/data/2.5/weather?q='+ ID_Input.value+ '&appid=' + APIKEY; 
+ 
+   var ID_temp = document.getElementById('ID_temp');
+   var ID_city = document.getElementById('ID_city');
+   var ID_humidity = document.getElementById('ID_humidity');
+   var ID_windspeed = document.getElementById('ID_windspeed');
+   debugger
+   $.ajax({
+    url: new_api,
+    type: 'GET',
+    success: function(data){
+        var temp = data.main.temp;
+        var C = temp - 273.15
+       ID_temp.innerHTML = (Math.round(C*10)/10).toFixed(1) +'°C'
+       ID_city.innerHTML = data.name
+       ID_humidity.innerHTML = data.main.humidity + '%'
+       ID_windspeed.innerHTML = data.wind.speed  + 'km/h'
+        console.log(data)
+    }
+   })
+}
+</script>
+</body>
+</html>

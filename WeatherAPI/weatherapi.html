@@ -67,7 +67,7 @@
   <div class="card mb-3 div1" style="max-width: 600px;">
     <div class="row g-0 ">
       <div class="col-md-4">
-        <img class="img" src="img/hd-cartoon-sun-with-cloud-weather-icon-png-31631359741flwt4iw3f3-removebg-preview.png"
+        <img class="img" id="ID_img" src="img/hd-cartoon-sun-with-cloud-weather-icon-png-31631359741flwt4iw3f3-removebg-preview.png"
           class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
@@ -96,6 +96,10 @@
       var Id_temp = document.getElementById('Id_temp');
       var Id_description = document.getElementById('Id_description');
       var Id_country = document.getElementById('Id_country');
+      var Id_img = document.getElementById('Id_img');
+      if(value=="clear sky"){
+        Id_img.src = ""
+      }
       debugger
 
       $.ajax({

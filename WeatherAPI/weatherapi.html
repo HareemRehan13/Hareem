@@ -97,9 +97,7 @@
       var Id_description = document.getElementById('Id_description');
       var Id_country = document.getElementById('Id_country');
       var Id_img = document.getElementById('Id_img');
-      if(value=="clear sky"){
-        Id_img.src = ""
-      }
+      var Id_img = document.getElementById('ID_img');
       debugger
 
       $.ajax({
@@ -113,7 +111,7 @@
           ID_city.innerText = data.name
           Id_description.innerText = data.weather[0].description
           Id_country.innerText = data.sys.country
-
+          Id_img.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
           console.log(Math.round(C))
           console.log(data)
         }

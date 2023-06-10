@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Javascript Task</title>
+</head>
+<body> 
+    <div class="container-fluid bgimg">
+    <div class="container">
+        <div class="row ">
+        <div class="col-lg-3">
+          <img class= "bigimg"  src="img/5231019-removebg-preview.png">
+        </div>
+        <div class="col-lg-9">
+       <h3 class="m-0">Marium Khan</h3>
+       <p class="status">Online</p>
+        </div>
+      </div> 
+    <br>
+    
+    <div class="row ">
+    <div class="col-lg-2">
+        <img src="img/3233483-removebg-preview.png" class="img1">
+      </div>
+      <div class="col-lg-10 per1" id="person1"> </div>
+      
+         </div>
+         <br>
+         <div class="row ">
+            <div class="col-lg-2">
+    <img src="img/5231019-removebg-preview.png" class="img2">
+            </div>
+    <div class="col-lg-9 per2" id="person2"></div>
+         </div>
+         <br>
+    <input type="text" class="input" id="ID_input">
+    <button type="button" class="btn" onclick="btnsnd()">Send</button>
+</div>
+</div>
+    <script>
+        var x = true
+function btnsnd(){
+    var ID_input= document.getElementById("ID_input").value
+    var person1= document.getElementById("person1")
+    var person2= document.getElementById("person2")
+
+ 
+  if (x == true){
+    person1.innerHTML = ID_input;
+    person1.style.display = "block"
+    x = false
+  }
+  else{
+    person2.innerHTML = ID_input;
+    person2.style.display = "block"
+    x = true
+
+  }
+}
+    </script>
+</body>
+</html>

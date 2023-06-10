@@ -1,0 +1,59 @@
+.bgimg{
+    background: linear-gradient(rgb(231, 50, 231), rgb(88, 88, 240));
+    width: 30%;
+    padding: 20px;
+    margin: 15px auto;
+}
+.container{
+    background-color: transparent ;
+ 
+}
+.bigimg{
+    background-color: rgb(27, 32, 32);
+    height: 65px;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+.status{
+   color: rgb(85, 184, 85);
+}
+.img1{
+
+    background-color: rgb(73, 153, 245);
+  
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+.img2{
+    background-color: rgb(252, 102, 219);
+ 
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+.per1{
+    width:auto;
+    background-color: rgba(73, 153, 245, 0.445) ;
+    border-radius: 30px; 
+    display: none;
+}
+.per2{
+    width:auto;
+    background-color:  rgba(252, 102, 219, 0.466);
+    border-radius: 30px; 
+    display: none;
+}
+.input{
+    border:none;
+    width: 80%;
+    border-radius:30px ;
+    background-color: rgba(0, 0, 0, 0.356);
+}
+.btn{
+    border:none; 
+    border-radius:30px ;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.356);
+}

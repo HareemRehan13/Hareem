@@ -1,12 +1,14 @@
 .bgimg{
-    background: linear-gradient(rgb(231, 50, 231), rgb(88, 88, 240));
+         background: linear-gradient(rgb(231, 50, 231), rgb(88, 88, 240));
     width: 30%;
-    padding: 20px;
-    margin: 15px auto;
+    padding: 25px;
+    margin: 20px auto;
 }
 .container{
-    background-color: transparent ;
- 
+    border-radius: 15px;
+    color: white;
+    padding: 18px; 
+ background:rgba(0, 0, 0, 0.396);
 }
 .bigimg{
     background-color: rgb(27, 32, 32);
@@ -46,6 +48,7 @@
     display: none;
 }
 .input{
+    color: white;
     border:none;
     width: 80%;
     border-radius:30px ;

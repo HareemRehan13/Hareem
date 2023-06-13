@@ -13,7 +13,7 @@
     <div id="ID_2"></div>
 
     <script>
-        var x =true;
+        var x = true;
         var chatlist =[];
 var senderID = 0;
 
@@ -23,14 +23,15 @@ var ID_2 = document.getElementById("ID_2");
 var Id_input = document.getElementById("Id_input").value;
 
     var obj = {
-    inputval:Id_input,
+    inputval: Id_input,
     senderid: senderID
 
     }
     chatlist.push(obj);
 
-    var arrayKeys = chatlist.map(el => el.senderid);
-    for(let i=0; i< chatlist.length; i++){
+    // var arrKeys = chatlist.map(el => el.senderid);
+
+    for (let i=0; i< chatlist.length; i++){
         var lastIndexValue = chatlist[i].senderid;
         var inputValue = chatlist[i].inputval;
 

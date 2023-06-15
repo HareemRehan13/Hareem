@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #chatbox {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#chat-area {
+  height: 200px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+</style>
+
+
+<body>
+    <div id="chatbox">
+        <div id="chat-area"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+
+
+      <script>
+        function sendMessage() {
+  var userInput = document.getElementById("user-input").value;
+  appendMessage(userInput, "user");
+  debugger
+  document.getElementById("user-input").value = "";
+  getChatbotResponse(userInput);
+}
+
+function appendMessage(message, sender) {
+  var chatArea = document.getElementById("chat-area");
+  var messageElement = document.createElement("p");
+  messageElement.classList.add(sender);
+  messageElement.innerText = message;
+  chatArea.appendChild(messageElement);
+}
+
+function getChatbotResponse(userInput) {
+  // Add your chatbot logic here
+  var chatbotResponse = "This is a sample response from the chatbot.";
+  appendMessage(chatbotResponse, "chatbot");
+}
+
+      </script>
+</body>
+</html>

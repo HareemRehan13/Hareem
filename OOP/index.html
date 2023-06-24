@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>OPP Task</title>
+</head>
+<body>
+  <!-- <h1>Studend Marksheet</h1>
+ <label>Name</label>
+  <input type="text" placeholder="Enter Your Name" id="ID_Name">
+ &nbsp;
+  <label>Roll No</label>
+  <input type="text" placeholder="Enter Your Roll No" id="ID_Rollno">
+  <br>
+  <button type="button" onclick="std_data()">Search</button>
+  <div id="name"></div>
+  <div id="rollno"></div> -->
+ 
+    <script>
+        class Marksheet{
+Name;
+Rollno;
+Total=0;
+Eng;
+Urdu;
+Maths;
+Chem;
+Phy;
+Percentage;
+Grades;
+
+
+std_marks(eng, urdu ,maths ,chem, phy){
+this.Eng= eng;
+this.Urdu = urdu;
+this.Maths = maths;
+this.Chem = chem;
+this.Phy = phy;
+this.Total = this.Eng+ this.Urdu +this.Maths +this.Chem + this.Phy;
+}
+std_data(name,rollno){
+  this.Name =name;
+  this.Rollno = rollno; 
+}
+std_per(){
+this.Percentage = this.Total*100/500
+}
+std_grade(){
+if(this.Percentage >= 80){
+ document.write('Student Grades:' +' '+'A' + '<br>') 
+}
+else if(this.Percentage >= 60){
+    document.write('Student Grades:' +' '+'B' + '<br>') }
+else(
+    document.write('Student Grades:' +' '+'F' + '<br>')  
+       ) 
+}
+
+  print(){
+     document.write('Student Name:' +' '+ this.Name + '<br>')  
+     document.write('Student Roll No:' +' '+ this.Rollno + '<br>')  
+     document.write('Student Marks:' +' '+ this.Total + '<br>')  
+     document.write('Student Percentage:' +' '+ this.Percentage+'%' + '<br>')  
+    
+        }
+        }
+    
+      var ObjMarksheet = new Marksheet()
+      ObjMarksheet.std_data('Maria', 20);
+      ObjMarksheet.std_marks(90 ,89 , 97 ,80 ,92)
+      ObjMarksheet.std_per()
+      ObjMarksheet.std_grade()
+      ObjMarksheet.print() 
+      
+//       function std_data(name,rollno){
+//    document.getElementById('name').innerHTML= 'Student Name :'+document.getElementById('ID_Name').value 
+//    document.getElementById('rollno').innerHTML= 'Student Roll No :'+document.getElementById('ID_Rollno').value 
+    
+
+// }
+    </script>
+</body>
+</html>
